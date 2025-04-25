@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>카카오톡 버튼있는 메시지 전송하기</title>
+<script id="javascript-sdk" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+</head>
+<body>
+<p><strong>아래 카카오톡 아이콘을 눌러 전송하세요</strong> By. Blackcats4567</p>
+<a id="kakao-link-btn" href="javascript:sendLink()">
+  <img
+    src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+  />
+</a>
+<script type="text/javascript">
+ Kakao.init('9a82000ef2951da3d023afd888d9b042');
+  function sendLink() {
+    Kakao.Link.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '오늘도 열심히 사는 파댕이',
+        description: '',
+        imageUrl:
+          'https://media.discordapp.net/attachments/1357658442462003263/1365342607382937631/1745584890639_2.png?ex=680cf5e4&is=680ba464&hm=727ed284dbcce9c60c10d7fe52dbc9471355aa63032ba08e5e62e0681882d567&=&format=webp&quality=lossless&width=350&height=350',
+        link: {
+          mobileWebUrl: 'http://카카오톡오픈채팅.서버.한국',
+          webUrl: 'http://카카오톡오픈채팅.서버.한국',
+        },
+      },
+      social: {
+        likeCount: 0, //99999가 최대입니다
+        commentCount: 0, //99999가 최대입니다
+        sharedCount: 0, //99999가 최대입니다
+      },
+      buttons: [
+        {
+          title: '자세히 보러가기',
+          link: {
+            mobileWebUrl: 'http://카카오톡오픈채팅.서버.한국',
+            webUrl: 'http://카카오톡오픈채팅.서버.한국',
+          },
+        },
+      ],
+    })
+  }
+</script>
+<!-- www.blackcats4567.com -->
+<!-- 이미지/버튼 클릭 시 주소는 Kakao Developers의 애플리케이션 > 플랫폼 > Web에 넣어야 클릭했을때 성공적으로 표시됩니다 -->
+  </body>
+</html>
